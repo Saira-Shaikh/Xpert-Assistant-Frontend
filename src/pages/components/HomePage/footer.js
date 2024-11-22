@@ -47,13 +47,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Column 2 */}
-        <motion.div
-          className=""
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeInUp}
-          custom={2}
-        >
+        <motion.div className="">
           <div className="space-x-6">
             {["Home", "Features", "How It Works", "FAQs"].map((item, index) => (
               <motion.span
@@ -67,15 +61,14 @@ export default function Footer() {
           </div>
           <div className="flex gap-6 justify-start items-center">
             {/* Divider */}
-            <hr className="my-8 border-2 border-[#3BAEEB] w-[290px]" />
+            <motion.hr
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: "290px", opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="my-8 border-2 border-[#3BAEEB] w-[290px]"
+            />
             {/* Social Icons */}
-            <motion.div
-              className="flex justify-center space-x-6"
-              initial="hidden"
-              whileInView="visible"
-              variants={fadeInUp}
-              custom={3}
-            >
+            <motion.div className="flex justify-center space-x-6">
               {[
                 { icon: FaInstagram, label: "Instagram" },
                 { icon: FaLinkedin, label: "LinkedIn" },

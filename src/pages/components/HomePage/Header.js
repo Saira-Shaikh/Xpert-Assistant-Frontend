@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import Link from "next/link";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -30,11 +30,13 @@ export default function Header() {
           {/* Desktop Navbar (visible on larger screens) */}
           <div className="hidden md:flex space-x-2">
             <NavButton className="border border-white text-white hover:bg-white hover:text-[#3BAEEB]">
-              Sign In
+              Sign Up
             </NavButton>
-            <NavButton className="bg-[#3BAEEB] text-white hover:bg-lightBlue-500">
-              Log In
-            </NavButton>
+            <Link href="./components/Login">
+              <NavButton className="bg-[#3BAEEB] text-white hover:bg-lightBlue-500">
+                Log In
+              </NavButton>
+            </Link>
           </div>
 
           {/* Hamburger Icon (visible on mobile screens) */}

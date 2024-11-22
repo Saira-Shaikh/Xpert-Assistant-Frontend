@@ -25,7 +25,7 @@ export default function Pricing() {
       <motion.h2
         initial={{ scale: 0.8, opacity: 0, y: 50 }}
         whileInView={{ scale: 1, opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.5, delay: 1 }}
         className="text-xl sm:text-3xl md:text-[48px] font-md text-center text-[#303440]"
       >
         The Choice <span className="text-[#3BAEEB]">is yours</span>
@@ -33,7 +33,7 @@ export default function Pricing() {
       <motion.p
         initial={{ scale: 0.8, opacity: 0, x: 50 }}
         whileInView={{ scale: 1, opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+        transition={{ duration: 0.5, delay: 1.2 }}
         className="text-[#999999] text-[24px] text-center max-w-[600px]"
       >
         You have 50 hours to see if the app is right for you
