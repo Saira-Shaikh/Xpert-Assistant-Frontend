@@ -29,9 +29,11 @@ export default function Header() {
 
           {/* Desktop Navbar (visible on larger screens) */}
           <div className="hidden md:flex space-x-2">
-            <NavButton className="border border-white text-white hover:bg-white hover:text-[#3BAEEB]">
-              Sign Up
-            </NavButton>
+            <Link href="./components/SignUp">
+              <NavButton className="border border-white text-white hover:bg-white hover:text-[#3BAEEB]">
+                Sign Up
+              </NavButton>
+            </Link>
             <Link href="./components/Login">
               <NavButton className="bg-[#3BAEEB] text-white hover:bg-lightBlue-500">
                 Log In
@@ -87,12 +89,16 @@ export default function Header() {
                 </button>
               </div>
               <div className="flex flex-col items-center space-y-6 text-white text-xl">
-                <NavButton className="border w-[90%] border-[#3BAEEB] text-[#3BAEEB] hover:bg-white hover:text-[#3BAEEB]">
-                  Sign In
-                </NavButton>
-                <NavButton className="bg-[#3BAEEB] w-[90%] text-white hover:bg-blue-500">
-                  Log In
-                </NavButton>
+                <Link className="w-[90%]" href="./components/SignUp">
+                  <NavButton className="border  border-[#3BAEEB] w-full text-[#3BAEEB] hover:bg-white hover:text-[#3BAEEB]">
+                    Sign Up
+                  </NavButton>
+                </Link>
+                <Link className="w-[90%]" href="./components/Login">
+                  <NavButton className="bg-[#3BAEEB] w-full text-white hover:bg-blue-500">
+                    Log In
+                  </NavButton>
+                </Link>
               </div>
             </motion.div>
           )}
