@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 export default function Ratings() {
   const ratings = [
-    { score: "4.9", label: "By Individuals" },
-    { score: "4.7", label: "By Companies" },
+    { id: 1, score: "4.9", label: "By Individuals" },
+    { id: 2, score: "4.7", label: "By Companies" },
   ];
 
   // Animation variants for the container
@@ -45,7 +45,10 @@ export default function Ratings() {
       {/* Second Div */}
       <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
         {ratings.map((rating, index) => (
-          <div key={index} className="flex flex-col items-center text-center">
+          <div
+            key={rating.id}
+            className="flex flex-col items-center text-center"
+          >
             <motion.h2
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}

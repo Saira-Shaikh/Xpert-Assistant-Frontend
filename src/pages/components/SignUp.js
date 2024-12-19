@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function SignUp() {
+  let [shrink, setShrink] = useState(false); // New state to toggle shrinking behavior
+
   return (
-    <div className="flex bg-gray-100 p-6 min-h-screen items-center justify-center">
+    <div className="flex bg-gray-100 p-6 min-h-screen items-center justify-start">
       {/* Main Rounded Div */}
-      <div className="relative bg-gradient-to-r from-[#3BAEEB] to-[#0F5D86] rounded-3xl w-full max-w-[1200px] h-fit p-6 lg:p-10 shadow-lg">
+      <div
+        className={`relative bg-gradient-to-r from-[#3BAEEB] to-[#0F5D86] 
+          ${shrink ? "w-[25%]" : "w-full"} 
+          transition-[width] overflow-hidden duration-[1500ms] rounded-3xl h-fit p-6 lg:p-10 shadow-lg`}
+      >
         {/* First Div */}
         <div className="flex pt-6 items-center justify-between">
           <img src="/Logo.png" alt="Logo" className="mb-4 w-fit h-[35px]" />
@@ -53,15 +59,21 @@ export default function SignUp() {
             Train it once with your team profiles, and it will score applicants
             on your unique scale.
           </motion.p>
-          <motion.button
-            className="mt-6 bg-[#3BAEEB] text-white px-4 py-2 md:px-8 md:py-3 rounded-sm hover:bg-gradient-to-b hover:duration-1000 shadow-md hover:from-[#3BAEEB] hover:to-[#0F5D86] transition-all font-bold"
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 0.8 }}
-            whileTap={{ scale: 0.95 }}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Sign Up
-          </motion.button>
+            <Link
+              href={"./SignupChat"}
+              onClick={() => setShrink(true)}
+              className="mt-16 bg-[#3BAEEB] text-white px-6 py-3 md:px-8 md:py-4 rounded-md 
+              hover:bg-gradient-to-b hover:duration-1000 shadow-md 
+              hover:from-[#3BAEEB] hover:to-[#0F5D86] transition-all font-bold text-lg"
+            >
+              Sign Up
+            </Link>
+          </motion.div>
         </div>
 
         {/* Third Div */}
